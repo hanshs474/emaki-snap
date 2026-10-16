@@ -1,9 +1,4 @@
-"""Log in to the Snap Store with craft-store and push + release both snaps.
-
-  docker run --rm -e UBUNTU_ONE_EMAIL -e UBUNTU_ONE_PASSWORD -e UBUNTU_ONE_OTP \
-    -v "$PWD/build:/b" -v "$PWD/upload.py:/upload.py" python:3.12-slim \
-    sh -c 'pip install -q craft-store && python /upload.py'
-"""
+"""Log in to the Snap Store with craft-store and push + release both snaps (run via ./upload.sh)."""
 import os, sys, time
 from craft_store import UbuntuOneStoreClient, endpoints
 
