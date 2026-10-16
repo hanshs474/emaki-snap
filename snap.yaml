@@ -1,0 +1,36 @@
+name: emaki
+version: '0.1.0'
+summary: Seedance 2.5 AI video generator CLI for emaki (emaki.ai)
+description: |
+  Official CLI for emaki (emaki.ai), the Japanese-language AI video generator
+  for Seedance 2.5 and Seedance 2.0. Type a prompt, get back the URL of the
+  finished clip or image.
+
+    emaki -credits
+    emaki "a paper lantern drifting over a night river"
+    emaki -model seedance_2 -p duration=8 -p resolution=720p "a fox in fresh snow"
+    emaki -p image=https://example.com/first-frame.jpg "the camera slowly pushes in"
+    emaki -image "a ramen shop at dusk, isometric"
+
+  Set EMAKI_API_KEY to a key from https://emaki.ai/settings/apikeys. Each run
+  costs credits on your emaki account, the same price as on the website.
+  Video models: seedance_2_5 (default), seedance_2, seedance_2_fast,
+  seedance_2_mini, minimax_h3, veo_3_1. Image models: nano_banana_2_lite,
+  nano_banana_2, seedream_5_lite, gpt_image_2.
+architectures: [ARCH]
+base: core22
+confinement: strict
+grade: stable
+license: MIT
+title: emaki AI Video Generator
+links:
+  website:
+    - https://emaki.ai/?utm_source=snapcraft&utm_medium=package
+  source-code:
+    - https://github.com/hanshs474/emaki-go
+  issues:
+    - https://github.com/hanshs474/emaki-go/issues
+apps:
+  emaki:
+    command: bin/emaki
+    plugs: [network]
